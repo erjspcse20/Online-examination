@@ -7,22 +7,22 @@ import javax.persistence.Id;
 public class Country {
 
 	@Id
-	private String id;
+	private Integer id;
 	private String name;
 	private String description;
 	public Country() {
 		super();
 	}
-	public Country(String id, String name, String description) {
+	public Country(Integer id, String name, String description) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 	}
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {

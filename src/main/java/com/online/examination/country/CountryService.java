@@ -21,24 +21,24 @@ public class CountryService {
 		
 	}
 	
-	public Optional<Country> getCountry(String id) {
+	public Optional<Country> getCountry(Integer id) {
 		//return countryRepository.findById(id);
 		//return null;
 		return countryRepository.findById(id);
 	}
 
-	public void addCountry(Country Country) {
-		countryRepository.save(Country);
+	public void addCountry(Country country) {
+		countryRepository.save(country);
 		
 	}
 
-	public void updateCountry(String id, Country Country) {
-		countryRepository.save(Country);
+	public void updateCountry(Integer id, Country country) {
+		countryRepository.save(country);
 		
 	}
 
-	public void deleteCountry(String id) {
-		countryRepository.deleteById(id);
+	public void deleteCountry(Integer id, Country country) {
+		countryRepository.save(country);
 	}
 
 }

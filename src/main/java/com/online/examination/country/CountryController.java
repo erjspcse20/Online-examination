@@ -16,31 +16,31 @@ public class CountryController {
 	@Autowired
 	private CountryService CountryService;
 	
-	@RequestMapping("/Countrys")
+	@RequestMapping("/allCountry")
 	public List<Country> getAllCountrys() {
 		return CountryService.getAllCountry();
 	}
 	
-	@RequestMapping("/Countrys/{id}")
-	public Optional<Country> getCountry(@PathVariable String id) {
+	@RequestMapping("/country/{id}")
+	public Optional<Country> getCountry(@PathVariable Integer id) {
 		//either you can give same name as parameter argument 
 		//or put path variable name of request mapping to path
 		//variable
 		return CountryService.getCountry(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/Countrys")
-	public void addCountry(@RequestBody Country Country) {
-		CountryService.addCountry(Country);
+	@RequestMapping(method=RequestMethod.POST, value="/addCountry")
+	public void addCountry(@RequestBody Country country) {
+		CountryService.addCountry(country);
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/Countrys/{id}")
-	public void updateCountry(@RequestBody Country Country, @PathVariable String id) {
-		CountryService.updateCountry(id, Country);
+	@RequestMapping(method=RequestMethod.POST, value="/updatecountry/{id}")
+	public void updateCountry(@RequestBody Country country, @PathVariable Integer id) {
+		CountryService.updateCountry(id, country);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/Countrys/{id}")
-	public void deleteCountry(@PathVariable String id) {
-		CountryService.deleteCountry(id);
+	@RequestMapping(method=RequestMethod.POST, value="/deletecountry/{id}")
+	public void deleteCountry(@RequestBody Country country, @PathVariable Integer id) {
+		CountryService.deleteCountry(id, country);
 	}
 }
