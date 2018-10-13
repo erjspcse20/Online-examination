@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,9 +28,18 @@ public class CityController {
 		return cityServices.getCity(id);
 	}
 	
-	@RequestMapping(value="/addCity")
+	@RequestMapping(method=RequestMethod.POST, value="/addCity")
 	public void addCity(@RequestBody City city) {
 		cityServices.addCity(city);
 	}
 	
+	@RequestMapping(method=RequestMethod.POST, value="/updateCity/{id}")
+	public void updateCity(@RequestBody City city, @PathVariable Integer id) {
+		cityServices.updateCity(id, city);
+	}
+	
+	@RequestMapping(method=RequestMethod.POST, value="/deleteCity/{id}")
+	public void deleteCity(@RequestBody City city, @PathVariable Integer id) {
+		cityServices.deleteCity(id, city);
+	}
 }
