@@ -43,6 +43,6 @@ public class FranchiseeController {
 	@RequestMapping(value="/deleteFranchisee/{id}")
 	public void deleteFranchisee(@RequestBody Franchisee franchisee,@PathVariable Integer id)
 	{
-		franchiseeService.updateFranchisee(franchisee, id);
+		franchiseeService.deleteFranchisee(franchisee, id);
 	}
 }

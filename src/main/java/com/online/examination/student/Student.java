@@ -1,4 +1,4 @@
-package com.online.examination.centre;
+package com.online.examination.student;
 
 import java.util.Date;
 
@@ -6,15 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Centre {
-
+public class Student {
 	@Id
 	private Integer id;
 	private String masterId;
 	private String franchiseeId;
-	private String centreName;
-	private String centreDisplayName;
-	private String centreDisplayNumber;
+	private String centreId;
 	private String fname;
 	private String lname;
 	private String userName;
@@ -34,29 +31,23 @@ public class Centre {
 	private String bankBranch;
 	private String bankAddress;
 	private String accountHolderName;
-	private String centreWebsite;
-	private String gstin;
 	private Integer isActive;
 	private Integer isDeleted;
 	private String createdBy;
 	private Date createdAt;
 	private Date updatedAt;
 	private String updatedBy;
-	public Centre() {
+	public Student() {
 		super();
 	}
-	public Centre(Integer id, String masterId, String centreName, String franchiseeId, String centreDisplayName, String centreDisplayNumber,
-			String fname, String lname, String userName, String mname, String mobileNo, String emailId, String address1,
-			String address2, String countryId, String stateId, String cityId, String aadhano, String panNo,
-			String accountNo, String bankName, String ifscCode, String bankBranch, String bankAddress,
-			String accountHolderName, String centreWebsite, String gstin, Integer isActive, Integer isDeleted,
+	public Student(Integer id, String masterId, String franchiseeId, String centreId, String fname, String lname, String userName, String mname,
+			String mobileNo, String emailId, String address1, String address2, String countryId, String stateId,
+			String cityId, String aadhano, String panNo, String accountNo, String bankName, String ifscCode,
+			String bankBranch, String bankAddress, String accountHolderName, Integer isActive, Integer isDeleted,
 			String createdBy, Date createdAt, Date updatedAt, String updatedBy) {
 		super();
 		this.id = id;
 		this.masterId = masterId;
-		this.centreName = centreName;
-		this.centreDisplayName = centreDisplayName;
-		this.centreDisplayNumber = centreDisplayNumber;
 		this.fname = fname;
 		this.lname = lname;
 		this.userName = userName;
@@ -76,15 +67,26 @@ public class Centre {
 		this.bankBranch = bankBranch;
 		this.bankAddress = bankAddress;
 		this.accountHolderName = accountHolderName;
-		this.centreWebsite = centreWebsite;
-		this.gstin = gstin;
 		this.isActive = isActive;
 		this.isDeleted = isDeleted;
 		this.createdBy = createdBy;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.updatedBy = updatedBy;
-		this.centreName = centreName;
+		this.franchiseeId = franchiseeId;
+		this.centreId = centreId;
+	}
+	public String getFranchiseeId() {
+		return franchiseeId;
+	}
+	public void setFranchiseeId(String franchiseeId) {
+		this.franchiseeId = franchiseeId;
+	}
+	public String getCentreId() {
+		return centreId;
+	}
+	public void setCentreId(String centreId) {
+		this.centreId = centreId;
 	}
 	public Integer getId() {
 		return id;
@@ -97,18 +99,6 @@ public class Centre {
 	}
 	public void setMasterId(String masterId) {
 		this.masterId = masterId;
-	}
-	public String getCentreDisplayName() {
-		return centreDisplayName;
-	}
-	public void setCentreDisplayName(String centreDisplayName) {
-		this.centreDisplayName = centreDisplayName;
-	}
-	public String getCentreDisplayNumber() {
-		return centreDisplayNumber;
-	}
-	public void setCentreDisplayNumber(String centreDisplayNumber) {
-		this.centreDisplayNumber = centreDisplayNumber;
 	}
 	public String getFname() {
 		return fname;
@@ -224,12 +214,6 @@ public class Centre {
 	public void setAccountHolderName(String accountHolderName) {
 		this.accountHolderName = accountHolderName;
 	}
-	public String getGstin() {
-		return gstin;
-	}
-	public void setGstin(String gstin) {
-		this.gstin = gstin;
-	}
 	public Integer getIsActive() {
 		return isActive;
 	}
@@ -266,23 +250,6 @@ public class Centre {
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-	public String getFranchiseeId() {
-		return franchiseeId;
-	}
-	public void setFranchiseeId(String franchiseeId) {
-		this.franchiseeId = franchiseeId;
-	}
-	public String getCentreName() {
-		return centreName;
-	}
-	public void setCentreName(String centreName) {
-		this.centreName = centreName;
-	}
-	public String getCentreWebsite() {
-		return centreWebsite;
-	}
-	public void setCentreWebsite(String centreWebsite) {
-		this.centreWebsite = centreWebsite;
-	}
 	
+
 }
