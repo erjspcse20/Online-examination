@@ -1,4 +1,4 @@
-package com.online.examination.franchisee;
+package com.online.examination.centre;
 
 import java.util.Date;
 
@@ -6,14 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Franchisee {
-	
+public class Centre {
+
 	@Id
 	private Integer id;
 	private String masterId;
-	private String companyName;
-	private String companyDisplayName;
-	private String companyDisplayNumber;
+	private String centre;
+	private String centreDisplayName;
+	private String centreDisplayNumber;
 	private String fname;
 	private String lname;
 	private String userName;
@@ -41,22 +41,23 @@ public class Franchisee {
 	private Date createdAt;
 	private Date updatedAt;
 	private String updatedBy;
-	public Franchisee() {
+	public Centre() {
 		super();
 	}
-	public Franchisee(Integer id, String masterId, String companyName, String companyDisplayName, String companyDisplayNumber, String fname, String lname, String userName, String mname,
-			String mobileNo, String emailId, String address1, String address2, String countryId, String stateId,
-			String cityId, String aadhano, String panNo, String accountNo, String bankName, String ifscCode,
-			String bankBranch, String bankAddress, String accountHolderName, String franchiseWebsite, String gstin,
-			Integer isActive, Integer isDeleted, String createdBy, Date createdAt, Date updatedAt, String updatedBy) {
+	public Centre(Integer id, String masterId, String centre, String centreDisplayName, String centreDisplayNumber,
+			String fname, String lname, String userName, String mname, String mobileNo, String emailId, String address1,
+			String address2, String countryId, String stateId, String cityId, String aadhano, String panNo,
+			String accountNo, String bankName, String ifscCode, String bankBranch, String bankAddress,
+			String accountHolderName, String franchiseWebsite, String gstin, Integer isActive, Integer isDeleted,
+			String createdBy, Date createdAt, Date updatedAt, String updatedBy) {
 		super();
 		this.id = id;
 		this.masterId = masterId;
+		this.centre = centre;
+		this.centreDisplayName = centreDisplayName;
+		this.centreDisplayNumber = centreDisplayNumber;
 		this.fname = fname;
 		this.lname = lname;
-		this.companyDisplayNumber = companyDisplayNumber;
-		this.companyName = companyName;
-		this.companyDisplayName = companyDisplayName;
 		this.userName = userName;
 		this.mname = mname;
 		this.mobileNo = mobileNo;
@@ -94,6 +95,24 @@ public class Franchisee {
 	}
 	public void setMasterId(String masterId) {
 		this.masterId = masterId;
+	}
+	public String getCentre() {
+		return centre;
+	}
+	public void setCentre(String centre) {
+		this.centre = centre;
+	}
+	public String getCentreDisplayName() {
+		return centreDisplayName;
+	}
+	public void setCentreDisplayName(String centreDisplayName) {
+		this.centreDisplayName = centreDisplayName;
+	}
+	public String getCentreDisplayNumber() {
+		return centreDisplayNumber;
+	}
+	public void setCentreDisplayNumber(String centreDisplayNumber) {
+		this.centreDisplayNumber = centreDisplayNumber;
 	}
 	public String getFname() {
 		return fname;
@@ -257,24 +276,5 @@ public class Franchisee {
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-	public String getCompanyName() {
-		return companyName;
-	}
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
-	public String getCompanyDisplayName() {
-		return companyDisplayName;
-	}
-	public void setCompanyDisplayName(String companyDisplayName) {
-		this.companyDisplayName = companyDisplayName;
-	}
-	public String getCompanyDisplayNumber() {
-		return companyDisplayNumber;
-	}
-	public void setCompanyDisplayNumber(String companyDisplayNumber) {
-		this.companyDisplayNumber = companyDisplayNumber;
-	}
-	
 	
 }
