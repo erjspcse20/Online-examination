@@ -14,7 +14,8 @@ public class Question {
 	private String answerOption3;
 	private String answerOption4;
 	private String masterId;
-	private String AnswerText;
+	private String levelId;
+	private String answerText;
 	private Integer questionType;
 	private Integer isDeleted;
 	private Integer isActive;
@@ -25,7 +26,7 @@ public class Question {
 	public Question() {
 		super();
 	}
-	public Question(Integer id, String questionText, String answerOption1, String answerOption2, String answerOption3,
+	public Question(Integer id, String questionText, String levelId, String answerOption1, String answerOption2, String answerOption3,
 			String answerOption4, String answerText, Integer questionType, Integer isDeleted, Integer isActive,
 			Integer isApproved, String createdBy, String updatedBy, String masterId, Integer pragraphId) {
 		super();
@@ -35,7 +36,8 @@ public class Question {
 		this.answerOption2 = answerOption2;
 		this.answerOption3 = answerOption3;
 		this.answerOption4 = answerOption4;
-		AnswerText = answerText;
+		this.answerText = answerText;
+		this.levelId = levelId;
 		this.questionType = questionType;
 		this.isDeleted = isDeleted;
 		this.isActive = isActive;
@@ -80,12 +82,6 @@ public class Question {
 	}
 	public void setAnswerOption4(String answerOption4) {
 		this.answerOption4 = answerOption4;
-	}
-	public String getAnswerText() {
-		return AnswerText;
-	}
-	public void setAnswerText(String answerText) {
-		AnswerText = answerText;
 	}
 	public Integer getQuestionType() {
 		return questionType;
@@ -134,6 +130,18 @@ public class Question {
 	}
 	public void setMasterId(String masterId) {
 		this.masterId = masterId;
+	}
+	public String getLevelId() {
+		return levelId;
+	}
+	public void setLevelId(String levelId) {
+		this.levelId = levelId;
+	}
+	public String getAnswerText() {
+		return answerText;
+	}
+	public void setAnswerText(String answerText) {
+		this.answerText = answerText;
 	}
 	
 }
