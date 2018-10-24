@@ -19,23 +19,19 @@ public class ContestService {
 		contstRepository.findAll()
 			.forEach(Contests::add);
 		return Contests;
-	}
-	
+	}	
 	public Optional<Contest> getContest(Integer id)
 	{
 		return contstRepository.findById(id);
 	}
-	
 	public void addContest(Contest Contest)
 	{
 		contstRepository.save(Contest);
 	}
-	
 	public void updateContest(Contest Contest,Integer id)
 	{
 		contstRepository.save(Contest);
 	}
-	
 	public void deleteContest(Contest Contest,Integer id)
 	{
 		contstRepository.save(Contest);
