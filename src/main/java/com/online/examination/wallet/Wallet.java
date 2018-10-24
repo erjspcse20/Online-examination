@@ -12,7 +12,8 @@ public class Wallet {
 	private Integer id;
 	private String franchiseeId;
 	private String centreId;
-	private String studentId;	
+	private String studentId;
+	private String userGroupId;
 	private String paymentMethodId;
 	private Float amount;
 	private String transactionType;
@@ -26,11 +27,12 @@ public class Wallet {
 	public Wallet() {
 		super();
 	}
-	public Wallet(Integer id, String franchiseeId, String centreId, String studentId, String paymentMethodId,
+	public Wallet(Integer id, String franchiseeId, String userGroupId, String centreId, String studentId, String paymentMethodId,
 			Float amount, String transactionType, String description, Integer isActive, Integer isDeleted,
 			String createdBy, Date createdAt, Date updatedAt, String updatedBy) {
 		super();
 		this.id = id;
+		this.userGroupId = userGroupId;
 		this.franchiseeId = franchiseeId;
 		this.centreId = centreId;
 		this.studentId = studentId;
@@ -50,6 +52,13 @@ public class Wallet {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	 
+	public String getUserGroupId() {
+		return userGroupId;
+	}
+	public void setUserGroupId(String userGroupId) {
+		this.userGroupId = userGroupId;
 	}
 	public String getFranchiseeId() {
 		return franchiseeId;
